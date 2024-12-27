@@ -25,9 +25,7 @@ fn any! FutureReject.poll(&self, any data) @dynamic {
 }
 
 fn Future reject(anyfault excuse) {
-    FutureReject r = {};
-    r.excuse = excuse;
-    return @tclone(r);
+    return @tclone(FutureReject { excuse });
 }
 
 def FutureThenFunction = fn Future(any result);
